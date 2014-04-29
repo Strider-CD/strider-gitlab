@@ -1,19 +1,22 @@
 Overview
-=======================
-This module provides seamless integration between strider and gitlab.
+========
+This plugin provides seamless integration between [Strider](https://github.com/Strider-CD/strider) and [GitLab](https://github.com/gitlabhq/gitlabhq). It enables
+you to add GitLab repositories to Strider and it hooks up necessary webhooks in
+order to automatically test on commits.
 
+Setup
+=====
 When you add a gitlab project into strider, in order to checkout your branch
 you need to put strider project public key in a gitlab user ssh keys.
-
-Strider
-========
-`Strider` is an Open Source Continuous Deployment / Continuous Integration
-platform.
 
 Requirements
 ============
   * Strider 1.4
   * Gitlab 6.2
+
+Contributors
+============
+  * nodefourtytwo ([nodefourtytwo/strider-gitlab](https://github.com/nodefourtytwo/strider-gitlab))
 
 License
 =======
