@@ -13,6 +13,7 @@ platform.
 Requirements
 ============
 Strider 1.4
+
 Gitlab 6.2
 
 License
