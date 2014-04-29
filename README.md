@@ -14,9 +14,9 @@ requirements
   * Strider 1.4
   * Gitlab 6.2
 
-constributors
+contributors
 ============
-  * nodefourtytwo ([nodefourtytwo/strider-gitlab](https://github.com/nodefourtytwo/strider-gitlab))
+  * nodefourtytwo ([nodefourtytwo/strider-gitlab](https://github.com/nodefourtytwo/strider-gitlab)) for providing the basic plugin which i've continued to develop
 
 license
 =======
