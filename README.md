@@ -1,2 +1,3 @@
-strider-gitlab
-==============
+license
+=======
+MIT-License, see LICENSE file.
