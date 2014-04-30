@@ -7,7 +7,7 @@ order to automatically test on commits.
 setup
 =====
 When you add a gitlab project into strider, in order to checkout your branch
-you need to put strider project public key in a gitlab user ssh keys.
+you need to put the strider project public key in a gitlab user ssh keys.
 
 requirements
 ============

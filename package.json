@@ -1,0 +1,50 @@
+{
+  "name": "strider-gitlab",
+  "version": "1.0.0",
+  "description": "A gitlab provider for strider",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com:meric426/strider-gitlab.git"
+  },
+  "keywords": [
+    "git",
+    "gitlab",
+    "strider"
+  ],
+  "author": {
+    "name": "Martin Ericson <martin@devbox.com>"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "strider": {
+    "id": "gitlab",
+    "title": "GitLab",
+    "type": "provider",
+    "hosted": true,
+    "config": {
+      "controller": "GitLabCtrl"
+    },
+    "accountConfig": {
+      "template": "config/accountConfig.html"
+    },
+    "webapp": "lib/webapp.js",
+    "worker": "lib/worker.js",
+    "inline_icon": "bitbucket"
+  },
+  "devDependencies": {
+    "jshint": "~2.1.11",
+    "expect.js": "~0.2.0",
+    "mocha": "~1.13.0"
+  },
+  "dependencies": {
+    "strider-git": "git+https://github.com/Strider-CD/strider-git.git",
+    "request": "~2.27.0",
+    "lodash": "~2.2.0",
+    "step": "0.0.5",
+    "async": "~0.2.9"
+  },
+  "bugs": {
+    "url": "https://github.com/meric426/strider-gitlab/issues"
+  },
+  "homepage": "https://github.com/meric426/strider-gitlab"
+}
