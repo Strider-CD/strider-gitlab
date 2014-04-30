@@ -1,9 +1,10 @@
-[![NPM](https://nodei.co/npm/strider-gitlab.png?downloads=true&stars=true)](https://nodei.co/npm/strider-gitlab/)
 strider-gitlab
 ==============
 This plugin provides seamless integration between [Strider](https://github.com/Strider-CD/strider) and [GitLab](https://github.com/gitlabhq/gitlabhq). It enables
 you to add GitLab repositories to Strider and it hooks up necessary webhooks in
 order to automatically test on commits.
+
+[![NPM](https://nodei.co/npm/strider-gitlab.png?downloads=true&stars=true)](https://nodei.co/npm/strider-gitlab/)
 
 setup
 =====
