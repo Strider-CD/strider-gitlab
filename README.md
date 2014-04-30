@@ -1,5 +1,4 @@
 [![NPM](https://nodei.co/npm/strider-gitlab.png?downloads=true&stars=true)](https://nodei.co/npm/strider-gitlab/)
-
 strider-gitlab
 ==============
 This plugin provides seamless integration between [Strider](https://github.com/Strider-CD/strider) and [GitLab](https://github.com/gitlabhq/gitlabhq). It enables
