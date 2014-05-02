@@ -1,4 +1,8 @@
 app.controller('GitLabCtrl', ['$scope', function ($scope){
+
+    $scope.config = $scope.providerConfig();
+    $scope.config.cache = $scope.config.cache || false;
+
     $scope.addWebhooks = function(){
         $scope.loadingWebhooks = true;
         $.ajax($scope.api_root + 'gitlab/hook', {
@@ -27,5 +31,9 @@ app.controller('GitLabCtrl', ['$scope', function ($scope){
                 $scope.error('Failed to remove gitlab webhooks', true);
             }
         });
+    };
+
+    $scope.save = function(){
+        this.providerConfig(this.config, console.log);
     };
 }]);
