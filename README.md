@@ -19,6 +19,7 @@ requirements
 contributors
 ============
   * nodefourtytwo ([nodefourtytwo/strider-gitlab](https://github.com/nodefourtytwo/strider-gitlab)) for providing the basic plugin which i've continued to develop
+  * [jonlil](https://github.com/jonlil)
 
 license
 =======
