@@ -18,7 +18,8 @@ requirements
 
 contributors
 ============
-  * nodefourtytwo ([nodefourtytwo/strider-gitlab](https://github.com/nodefourtytwo/strider-gitlab)) for providing the basic plugin which i've continued to develop
+  * Martin Ericson (http://www.devbox.com)
+  * [nodefourtytwo/strider-gitlab](https://github.com/nodefourtytwo/strider-gitlab)
   * [jonlil](https://github.com/jonlil)
 
 license
