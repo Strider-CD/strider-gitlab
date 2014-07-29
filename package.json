@@ -37,11 +37,12 @@
     "mocha": "~1.13.0"
   },
   "dependencies": {
-    "strider-git": "git+https://github.com/Strider-CD/strider-git.git",
-    "request": "~2.27.0",
+    "async": "~0.2.9",
+    "gravatar": "^1.0.6",
     "lodash": "~2.2.0",
+    "request": "~2.27.0",
     "step": "0.0.5",
-    "async": "~0.2.9"
+    "strider-git": "^0.2.0"
   },
   "bugs": {
     "url": "https://github.com/meric426/strider-gitlab/issues"
