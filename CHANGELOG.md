@@ -1,3 +1,9 @@
+## 1.0.4
+
+Bugfixes:
+
+  - fixed an issue if group name is changed in gitlab
+
 ## 1.0.3
 
 Features:
