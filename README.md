@@ -21,6 +21,7 @@ contributors
   * Martin Ericson (http://www.devbox.com)
   * [nodefourtytwo/strider-gitlab](https://github.com/nodefourtytwo/strider-gitlab)
   * [jonlil](https://github.com/jonlil)
+  * [edy](https://github.com/edy)
 
 license
 =======
