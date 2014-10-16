@@ -1,6 +1,6 @@
 {
   "name": "strider-gitlab",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "A gitlab provider for strider",
   "repository": {
     "type": "git",
@@ -42,7 +42,7 @@
     "lodash": "~2.2.0",
     "request": "~2.27.0",
     "step": "0.0.5",
-    "strider-git": "^0.2.0"
+    "strider-git": "^0.2.1"
   },
   "bugs": {
     "url": "https://github.com/meric426/strider-gitlab/issues"
