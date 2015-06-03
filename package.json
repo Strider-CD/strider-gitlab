@@ -40,7 +40,6 @@
     "async": "~0.2.9",
     "gravatar": "^1.0.6",
     "lodash": "~2.2.0",
-    "request": "~2.27.0",
     "step": "0.0.5",
     "strider-git": "^0.2.3",
     "superagent": "~0.15.4"
