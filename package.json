@@ -42,7 +42,8 @@
     "lodash": "~2.2.0",
     "request": "~2.27.0",
     "step": "0.0.5",
-    "strider-git": "^0.2.3"
+    "strider-git": "^0.2.3",
+    "superagent": "~0.15.4"
   },
   "bugs": {
     "url": "https://github.com/meric426/strider-gitlab/issues"
