@@ -1,20 +1,6 @@
 strider-gitlab
 ==============
-This plugin provides seamless integration between [Strider](https://github.com/Strider-CD/strider) and [GitLab](https://github.com/gitlabhq/gitlabhq). It enables
-you to add GitLab repositories to Strider and it hooks up necessary webhooks in
-order to automatically test on commits.
-
-[![NPM](https://nodei.co/npm/strider-gitlab.png?downloads=true&stars=true)](https://nodei.co/npm/strider-gitlab/)
-
-setup
-=====
-When you add a gitlab project into strider, in order to checkout your branch
-you need to put the strider project public key in a gitlab user ssh keys.
-
-requirements
-============
-  * Strider 1.4
-  * Gitlab 6.2
+This plugin provides seamless integration between [Strider](https://github.com/Strider-CD/strider) and [GitLab](https://github.com/gitlabhq/gitlabhq). It enables you to add GitLab repositories to Strider and it hooks up necessary webhooks in order to automatically test on commits.
 
 contributors
 ============
@@ -22,6 +8,7 @@ contributors
   * [nodefourtytwo/strider-gitlab](https://github.com/nodefourtytwo/strider-gitlab)
   * [jonlil](https://github.com/jonlil)
   * [edy](https://github.com/edy)
+  * [*others*](https://github.com/Strider-CD/strider-gitlab/graphs/contributors)
 
 license
 =======
