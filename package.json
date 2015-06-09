@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "async": "~0.2.9",
+    "debug": "~0.7.3",
     "gravatar": "^1.0.6",
     "lodash": "~2.2.0",
     "step": "0.0.5",
