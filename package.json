@@ -42,7 +42,7 @@
     "gravatar": "^1.0.6",
     "lodash": "~2.2.0",
     "step": "0.0.5",
-    "strider-git": "^0.2.3",
+    "strider-git": "^0.2.4",
     "superagent": "~0.15.4"
   },
   "bugs": {
