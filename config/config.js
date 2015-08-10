@@ -34,6 +34,6 @@ app.controller('GitLabCtrl', ['$scope', function ($scope){
     };
 
     $scope.save = function(){
-        this.providerConfig(this.config, console.log);
+        this.providerConfig(this.config);
     };
 }]);
