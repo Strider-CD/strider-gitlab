@@ -49,6 +49,21 @@ var providerConfig = {
   auth: {type: 'ssh'}
 };
 
+var providerConfigForProjectWithMissingStriderJson = 
+{ whitelist: [],
+  pull_requests: 'none',
+  repo: 'http://nodev/stridertester/priproject2',
+  owner:
+   { avatar_url: 'http://www.gravatar.com/avatar/3f671ed86ed3d21ed3640c7a016b0997?s=40&d=identicon',
+     state: 'active',
+     id: 3,
+     username: 'stridertester',
+     name: 'Strider Tester' },
+  url: 'git@nodev:stridertester/priproject2.git',
+  scm: 'git',
+  auth: { type: 'ssh' } 
+};
+
 var repoProject = {
   name: 'stridertester/privproject1',
   display_name: 'stridertester/privproject1',
@@ -127,32 +142,48 @@ describe('gitlab webapp', function () {
       nock.cleanAll();
     });
 
+    var filename = "strider.json";
+
+    var ref = {
+      branch: 'master',
+    };
+
+    //getFile only uses account.config
+    var account = {
+      config: {
+        api_key: 'zRtVsmeznn7ySatTrnrp',
+        api_url: 'http://localhost:80/api/v3'
+      }
+    };
+
+
+    //getFile only uses project.provider.repo_id
+    var project = {
+      provider: {
+        repo_id: '5'
+      }
+    };
+
+    //project with strider.json missing
+    var projectWithMissingStriderJson ={
+      provider: {
+        repo_id: '8'
+      }
+    };
+
 
     it('should get a json file correctly', function (done) {
-      var filename = "strider.json";
-
-      var ref = {
-        branch: 'master',
-      };
-
-      //getFile only uses account.config
-      var account = {
-        config: {
-          api_key: 'zRtVsmeznn7ySatTrnrp',
-          api_url: 'http://localhost:80/api/v3'
-        }
-      };
-
-
-      //getFile only uses project.provider.repo_id
-      var project = {
-        provider: {
-          repo_id: '5',
-        }
-      }
-
       webapp.getFile(filename, ref, account, providerConfig, project, function (err, text) {
         expect(text).to.be.a('string');
+        done();
+      });
+    });
+
+    //created a project priproject2 of type node.js, but not having a strider.json for this test
+    it('should not crash, but return an error if the file could not be found', function(done) {
+      webapp.getFile(filename, ref, account, providerConfigForProjectWithMissingStriderJson, projectWithMissingStriderJson, function (err, text) {
+        expect(err).to.be.ok();
+        expect(text).to.not.be.ok();
         done();
       });
     });
