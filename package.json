@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com:meric426/strider-gitlab.git"
+    "url": "https://github.com:Strider-CD/strider-gitlab.git"
   },
   "keywords": [
     "git",
@@ -53,7 +53,7 @@
     "superagent": "~1.3.0"
   },
   "bugs": {
-    "url": "https://github.com/meric426/strider-gitlab/issues"
+    "url": "https://github.com/Strider-CD/strider-gitlab/issues"
   },
-  "homepage": "https://github.com/meric426/strider-gitlab"
+  "homepage": "https://github.com/Strider-CD/strider-gitlab"
 }
