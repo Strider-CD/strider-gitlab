@@ -34,7 +34,7 @@
     },
     "webapp": "lib/webapp.js",
     "worker": "lib/worker.js",
-    "inline_icon": "bitbucket"
+    "inline_icon": "git"
   },
   "devDependencies": {
     "expect.js": "~0.2.0",
