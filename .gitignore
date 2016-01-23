@@ -26,3 +26,4 @@ node_modules
 
 # Webstorm project folder
 .idea
+.DS_Store

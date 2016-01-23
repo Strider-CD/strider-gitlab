@@ -1,15 +1,17 @@
 <div class="control-group api-url">
 	<label class="control-label" for="password">API url (<a href="https://github.com/gitlabhq/gitlabhq/tree/master/doc/api" target="_blank">?</a>)</label>
+  <div class="controls">
+    <input ng-model="config.api_url" placeholder="http://your.gitlab.host/api/vX" type="text">
+  </div>
 </div>
-<div class="controls">
-	<input ng-model="config.api_url" placeholder="http://your.gitlab.host/api/vX">
-</div>
+
 <div class="control-group token">
 	<label class="control-label" for="password">Private token (<a href="https://github.com/gitlabhq/gitlabhq/tree/master/doc/api" target="_blank">?</a>)</label>
+  <div class="controls">
+    <input ng-model="config.api_key" placeholder="Private token" type="text">
+  </div>
 </div>
-<div class="controls">
-	<input ng-model="config.api_key" placeholder="Private token">
-</div>
+
 <div class="actions">
 	<button class="btn" ng-click="save()">Save</button>
 </div>
