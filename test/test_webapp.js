@@ -49,7 +49,7 @@ var providerConfig = {
   auth: {type: 'ssh'}
 };
 
-var providerConfigForProjectWithMissingStriderJson = 
+var providerConfigForProjectWithMissingStriderJson =
 { whitelist: [],
   pull_requests: 'none',
   repo: 'http://nodev/stridertester/priproject2',
@@ -61,7 +61,7 @@ var providerConfigForProjectWithMissingStriderJson =
      name: 'Strider Tester' },
   url: 'git@nodev:stridertester/priproject2.git',
   scm: 'git',
-  auth: { type: 'ssh' } 
+  auth: { type: 'ssh' }
 };
 
 var repoProject = {
@@ -150,10 +150,8 @@ describe('gitlab webapp', function () {
 
     //getFile only uses account.config
     var account = {
-      config: {
         api_key: 'zRtVsmeznn7ySatTrnrp',
         api_url: 'http://localhost:80/api/v3'
-      }
     };
 
 
