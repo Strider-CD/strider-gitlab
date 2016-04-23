@@ -17,6 +17,25 @@ var nock = require('nock');
 module.exports = function () {
 
   //--------------------------------------------------------------------------------------
+  //Simulate a 401 reply if api key is not sent
+  nock('http://localhost:80')
+    .post('/api/v3/projects/5/hooks', {
+      "url": "http://localhost:3000/stridertester/privproject1/api/gitlab/webhook",
+      "push_events": true
+    })
+    .reply(401, {"message": "401 Unauthorized"}, {
+      server: 'nginx',
+      date: 'Fri, 21 Aug 2015 14:42:46 GMT',
+      'content-type': 'application/json',
+      'content-length': '30',
+      connection: 'close',
+      status: '401 Unauthorized',
+      'cache-control': 'no-cache',
+      'x-request-id': '052eafeb-0028-4e69-b951-95925efdc232',
+      'x-runtime': '0.004600'
+    });
+
+  //--------------------------------------------------------------------------------------
   //Simulate 201 replies when we request the addition of a new project
   //(adding hooks and keys)
   nock('http://localhost:80')
@@ -69,25 +88,6 @@ module.exports = function () {
       'cache-control': 'max-age=0, private, must-revalidate',
       'x-request-id': '0e829475-9fda-458e-8b34-08c7e8c4c0f5',
       'x-runtime': '0.099567'
-    });
-
-  //--------------------------------------------------------------------------------------
-  //Simulate a 401 reply if api key is not sent
-  nock('http://localhost:80')
-    .post('/api/v3/projects/5/hooks', {
-      "url": "http://localhost:3000/stridertester/privproject1/api/gitlab/webhook",
-      "push_events": true
-    })
-    .reply(401, {"message": "401 Unauthorized"}, {
-      server: 'nginx',
-      date: 'Fri, 21 Aug 2015 14:42:46 GMT',
-      'content-type': 'application/json',
-      'content-length': '30',
-      connection: 'close',
-      status: '401 Unauthorized',
-      'cache-control': 'no-cache',
-      'x-request-id': '052eafeb-0028-4e69-b951-95925efdc232',
-      'x-runtime': '0.004600'
     });
 
   //--------------------------------------------------------------------------------------
