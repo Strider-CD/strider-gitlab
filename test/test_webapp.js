@@ -293,7 +293,7 @@ describe('gitlab webapp', function () {
       webapp.listRepos(config, function (err, repos) {
         expect(err).to.not.be.ok();
         expect(repos).to.be.an('array');
-        expect(repos.length).to.eql(6);
+        expect(repos.length).to.eql(3);
         done();
       });
     });
