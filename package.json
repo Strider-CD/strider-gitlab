@@ -30,6 +30,7 @@
       "controller": "GitLabCtrl"
     },
     "accountConfig": {
+      "setupLink": "/account/#provider-gitlab",
       "template": "config/accountConfig.html"
     },
     "webapp": "lib/webapp.js",
