@@ -51,7 +51,7 @@ module.exports = function () {
 
 
   nock('http://localhost:80')
-    .post('/api/v3/projects/5/keys', {
+    .post('/api/v3/projects/5/deploy_keys', {
       "title": "strider-stridertester/privproject1",
       "key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1j1c3wNyUwFzIhU5ELZb6tH1K+TkQgV0CrYjRvWmeZZr5aNKehSo5ntCoPtjZOddD2qYOUNyqe0EkdsSa7JeuD0blk5T9V8EADxqSmfYE8qD3Ch1JN0T4gbxoH20N45gqfpzug04FNwaDvCoxJgKvJXNj141SRLVVsa3DlByqC1Il+6TS7LqsQQMnSahgdx6fOUSLzSRG5NmbHGnS4CA1W4zyqQKzznh/Qj9WLxQKxugly3PPWtlcCDoaFBBQSOIgGVs00Bd3X8DJW/3gNPfydtUAdm/BcDZHOLyBUNOQCjR/fGyLS8D4ufYt6vr72No9O0dyKyI+FpOb+jPDG631 stridertester/privproject1-stridertester@gmail.com\n"
     })
@@ -96,7 +96,7 @@ module.exports = function () {
     });
 
   nock('http://localhost:80')
-    .post('/api/v3/projects/5/keys', {
+    .post('/api/v3/projects/5/deploy_keys', {
       "title": "strider-stridertester/privproject1",
       "key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1j1c3wNyUwFzIhU5ELZb6tH1K+TkQgV0CrYjRvWmeZZr5aNKehSo5ntCoPtjZOddD2qYOUNyqe0EkdsSa7JeuD0blk5T9V8EADxqSmfYE8qD3Ch1JN0T4gbxoH20N45gqfpzug04FNwaDvCoxJgKvJXNj141SRLVVsa3DlByqC1Il+6TS7LqsQQMnSahgdx6fOUSLzSRG5NmbHGnS4CA1W4zyqQKzznh/Qj9WLxQKxugly3PPWtlcCDoaFBBQSOIgGVs00Bd3X8DJW/3gNPfydtUAdm/BcDZHOLyBUNOQCjR/fGyLS8D4ufYt6vr72No9O0dyKyI+FpOb+jPDG631 stridertester/privproject1-stridertester@gmail.com\n"
     })
@@ -136,7 +136,7 @@ module.exports = function () {
 
 
   nock('http://localhost:80')
-    .post('/api/v3/projects/invalidrepo/keys', {
+    .post('/api/v3/projects/invalidrepo/deploy_keys', {
       "title": "strider-stridertester/privproject1",
       "key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1j1c3wNyUwFzIhU5ELZb6tH1K+TkQgV0CrYjRvWmeZZr5aNKehSo5ntCoPtjZOddD2qYOUNyqe0EkdsSa7JeuD0blk5T9V8EADxqSmfYE8qD3Ch1JN0T4gbxoH20N45gqfpzug04FNwaDvCoxJgKvJXNj141SRLVVsa3DlByqC1Il+6TS7LqsQQMnSahgdx6fOUSLzSRG5NmbHGnS4CA1W4zyqQKzznh/Qj9WLxQKxugly3PPWtlcCDoaFBBQSOIgGVs00Bd3X8DJW/3gNPfydtUAdm/BcDZHOLyBUNOQCjR/fGyLS8D4ufYt6vr72No9O0dyKyI+FpOb+jPDG631 stridertester/privproject1-stridertester@gmail.com\n"
     })
@@ -187,7 +187,7 @@ module.exports = function () {
     });
 
   nock('http://localhost:80')
-    .post('/api/v3/projects/5/keys', {"title": "strider-stridertester/privproject1", "key": "invalid key"})
+    .post('/api/v3/projects/5/deploy_keys', {"title": "strider-stridertester/privproject1", "key": "invalid key"})
     .query({"private_token": "zRtVsmeznn7ySatTrnrp"})
     .reply(400, {"message": {"key": ["is invalid"], "fingerprint": ["cannot be generated"]}}, {
       server: 'nginx',

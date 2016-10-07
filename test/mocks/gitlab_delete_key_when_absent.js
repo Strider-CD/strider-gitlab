@@ -18,7 +18,7 @@ var nock = require('nock');
 module.exports = function () {
 
   nock('http://localhost:80')
-    .get('/api/v3/projects/5/keys')
+    .get('/api/v3/projects/5/deploy_keys')
     .query({"private_token": "zRtVsmeznn7ySatTrnrp"})
     .reply(200, [], {
       server: 'nginx',

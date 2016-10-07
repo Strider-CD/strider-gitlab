@@ -19,7 +19,7 @@ module.exports = function () {
   //--------------------------------------------------------------------------------------
   //simulate a Created 201 response when we try to deploy ssh keys for a project
   nock('http://localhost:80')
-    .post('/api/v3/projects/5/keys', {
+    .post('/api/v3/projects/5/deploy_keys', {
       "title": "strider-stridertester/privproject1",
       "key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDAMoSHhKfeE3/oXanAQEZO0Sq20SMjvjmJlTy+CaGz/1uk+glLXi9u2RKtfPRZDceAgyEtRUpqya9Uo1v9bjkIckGLhQwXdSo2G6O3QuzpE3gc6AXTDPQ0ZkkXbSdU9VGL1Zzr+maBnvfwK6IlsNz3fLa4lNV7vz1LaGCg9D1jP+nufZjuDiCAno7D607oG1iHQ3x/BqzphUATav3DFQFT2FBmmittQT0l0mMJ4XsQCQXkwNbDjkLYNon8FYPm9U3AOlzicOGteebt5mhsQtfl9+lL99B8+fk8b24pEEbOxZ4l0HcwMI1R5OLoTzPwSvVw+bp3YPhH2IzfFwK5NUk7 stridertester/privproject1-stridertester@gmail.com\n"
     })
@@ -45,7 +45,7 @@ module.exports = function () {
   //--------------------------------------------------------------------------------------
   //simulate a 400 Bad Request response when an invalid key is sent
   nock('http://localhost:80')
-    .post('/api/v3/projects/5/keys', {"title": "strider-stridertester/privproject1", "key": "invalid-key"})
+    .post('/api/v3/projects/5/deploy_keys', {"title": "strider-stridertester/privproject1", "key": "invalid-key"})
     .query({"private_token": "zRtVsmeznn7ySatTrnrp"})
     .reply(400, {"message": {"key": ["is invalid"], "fingerprint": ["cannot be generated"]}}, {
       server: 'nginx',
@@ -62,7 +62,7 @@ module.exports = function () {
   //--------------------------------------------------------------------------------------
   //simulate a 401 Unauthorized response when invalid credentials are used
   nock('http://localhost:80')
-    .post('/api/v3/projects/5/keys', {
+    .post('/api/v3/projects/5/deploy_keys', {
       "title": "strider-stridertester/privproject1",
       "key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDAMoSHhKfeE3/oXanAQEZO0Sq20SMjvjmJlTy+CaGz/1uk+glLXi9u2RKtfPRZDceAgyEtRUpqya9Uo1v9bjkIckGLhQwXdSo2G6O3QuzpE3gc6AXTDPQ0ZkkXbSdU9VGL1Zzr+maBnvfwK6IlsNz3fLa4lNV7vz1LaGCg9D1jP+nufZjuDiCAno7D607oG1iHQ3x/BqzphUATav3DFQFT2FBmmittQT0l0mMJ4XsQCQXkwNbDjkLYNon8FYPm9U3AOlzicOGteebt5mhsQtfl9+lL99B8+fk8b24pEEbOxZ4l0HcwMI1R5OLoTzPwSvVw+bp3YPhH2IzfFwK5NUk7 stridertester/privproject1-stridertester@gmail.com\n"
     })
@@ -82,7 +82,7 @@ module.exports = function () {
   //--------------------------------------------------------------------------------------
   //simulate a 404 response when project could not be found
   nock('http://localhost:80')
-    .post('/api/v3/projects/wrong%20repo%20id/keys', {
+    .post('/api/v3/projects/wrong%20repo%20id/deploy_keys', {
       "title": "strider-stridertester/privproject1",
       "key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDAMoSHhKfeE3/oXanAQEZO0Sq20SMjvjmJlTy+CaGz/1uk+glLXi9u2RKtfPRZDceAgyEtRUpqya9Uo1v9bjkIckGLhQwXdSo2G6O3QuzpE3gc6AXTDPQ0ZkkXbSdU9VGL1Zzr+maBnvfwK6IlsNz3fLa4lNV7vz1LaGCg9D1jP+nufZjuDiCAno7D607oG1iHQ3x/BqzphUATav3DFQFT2FBmmittQT0l0mMJ4XsQCQXkwNbDjkLYNon8FYPm9U3AOlzicOGteebt5mhsQtfl9+lL99B8+fk8b24pEEbOxZ4l0HcwMI1R5OLoTzPwSvVw+bp3YPhH2IzfFwK5NUk7 stridertester/privproject1-stridertester@gmail.com\n"
     })

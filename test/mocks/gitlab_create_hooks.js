@@ -67,7 +67,7 @@ module.exports = function () {
     });
 
   nock('http://localhost:80')
-    .post('/api/v3/projects/5/keys', {
+    .post('/api/v3/projects/5/deploy_keys', {
       "title": "strider-stridertester/privproject1",
       "key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5CS04M9YZAoOkl9suZuKdBR643lB9Kv2AigyqcCfljhnFK3tWPLEnlsLE7ZnunTC3VcPPesdC8MeWC95EvQgNGH6Y5oXrGcaxZKiVDunk4xxKpJQjzMbp753B4R7i28NyZVShCyYG0+wkqAYlJ4NFWn6PMEOouinY8Z3/JD/e9luq4QgyyrI9s+e7VWKBBof9f6FtaGWXwpaWt7Peud3/AWKkhPELQmDDBEcZ5jxFneLsO0KEQ3qqGlEhQbtYLblgjWvuekd0CAReyUNjyJQG+rfDyVVadAQNHiri7c8cj6Y766FdfRskCKiA7E5IPfnysUcRx8657u6DG4PC6guV stridertester/privproject1-stridertester@gmail.com\n"
     })

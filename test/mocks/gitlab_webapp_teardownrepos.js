@@ -23,7 +23,7 @@ module.exports = function () {
 
   //get the list of ssh keys
   nock('http://localhost:80')
-    .get('/api/v3/projects/5/keys')
+    .get('/api/v3/projects/5/deploy_keys')
     .query({"private_token": "zRtVsmeznn7ySatTrnrp"})
     .reply(200, ["1f8b080000000000000375d14b8fa2401405e0bfd2614bdb4d953c5d0dcf26a2342f5b743299005542c94ba1046132ff7d3499cd2ce66e4eeec9d97ddf7f3104312b28bf3294d00a332ba6a71d41b85bfc4d8a7b8abbf74b47864bd79e714601f3ca94787a4efb62d1f5c98bfa386de9ce890ea60c9acfd7507d557bd6aaafd7ad939243efb53c053a98871d6756e7b477e429908b6242a6531feffa1859cb61107bc9abc7234621f59325f24814f6b3a7de2732d159b69348637349fa5aebb91b39bb6b3542f409e5ecd816bc1d8c72a1d73011344d833a1902a7d95a8dc8d9c04a63bfea14f3e6a54225dd907f4ed61f87d2deab8622679b496a8da54da3681b833054aa3db89bb9e5df3c944690cab59e69bb2c9725cb364ba4909087065b8fe6d05e9c2bab3a87c22c21328c4d75312d716d5b6c5e9ea6c93fef02a4ab2d7f307a711b70db36d8eecf208958019fc8e912eedf95358d2d213646a7ac9bf2ab41d7d80199a8ba568c58d4229bf65699ba3cdb7d2e371f6aa301bc9edd61d41af7e5ff3effd27dcbeb84546f595b3fdcb20e2714a39f097df0410e080b4e5e401801b0e2c51514de38513932bf7ffc014101a3c118020000"], {
       server: 'nginx',
@@ -60,7 +60,7 @@ module.exports = function () {
 
   //delete the key associated with the project
   nock('http://localhost:80')
-    .delete('/api/v3/projects/5/keys/28')
+    .delete('/api/v3/projects/5/deploy_keys/28')
     .query({"private_token": "zRtVsmeznn7ySatTrnrp"})
     .reply(200, ["1f8b08000000000000038c52c976a24014fd951cb6c4842a9957cd188e286132a29b1ca04a40c64009627ebef1f4ca5dbfdd7d77d8dcfb4b158892a1f84a5d07dc7f3f4073adaa572aed714c30fa8e0925539001dc8a1157108600c82c2f43ee8de1a513b5d83af45fba12cf4bd030e4ab7e885f94e5d4b5738f3530a7d078405df114f5f1563cad6eeda4380e6ecb12a081fbb8678cea920cb638fb629ecfc8b0ebd34d9b42733d8efc20b8f574c228205ebc466e1106c3dd556e733193bb68c5a14a6782f0b5d13227b4f73fd504d12714d3539bb3963f89b956c3985355156ac5e8dbcdce6c78c602661279552f195737e12ae18abc4bbcf93896d641d12531ddce42abaf2d1286bb080481541dc0cdc84cefeaa2248444acb554dda7992898965122a90858a8d3f5648c6d67ffd08a7dcc8d12225ddf569d61f21bcba4b3f23ccfde65ef234d69d9a33ef03b9fd9b5feee7001714873f85c9cbbe0f02e6d486472913ed965dd945f0dfa896c90f28a634688462db2c8609689c3d2fde77afba1342ac09bbb334e6ae3bc0ca42f10ee091e08eedfbbbe18bbbebde09480d513f527abe3a27a4bdb7ae99714a4c28fe6fe999f954f218bf85c3419ee97e4e6b19a98971920f3922c2c83817f6795966265996c65666a95626165666c656a62659c6695960452936461659a08d45f509a949399ac64959698539c5a0b00837af5d39c020000"], {
       server: 'nginx',
@@ -114,7 +114,7 @@ module.exports = function () {
 
 
   nock('http://localhost:80')
-    .get('/api/v3/projects/5/keys')
+    .get('/api/v3/projects/5/deploy_keys')
     .query({"private_token": "badkey"})
     .reply(401, {"message": "401 Unauthorized"}, {
       server: 'nginx',
@@ -148,7 +148,7 @@ module.exports = function () {
 
 
   nock('http://localhost:80')
-    .get('/api/v3/projects/invalidrepo/keys')
+    .get('/api/v3/projects/invalidrepo/deploy_keys')
     .query({"private_token": "zRtVsmeznn7ySatTrnrp"})
     .reply(404, ["1f8b0800000000000003ab56ca4d2d2e4e4c4f55b252323130510828cacf4a4d2e51f0cb2f5170cb2fcd4b51aa050037095a2823000000"], {
       server: 'nginx',
