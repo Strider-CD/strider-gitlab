@@ -48,7 +48,7 @@
     "nock": "^8.0.0"
   },
   "dependencies": {
-    "async": "~2.0.0-rc.3",
+    "async": "~2.1.0",
     "debug": "~2.2.0",
     "gravatar": "^1.0.6",
     "lodash": "~4.16.4",
