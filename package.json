@@ -51,7 +51,7 @@
     "async": "~2.1.0",
     "debug": "~2.3.0",
     "gravatar": "^1.0.6",
-    "lodash": "~4.16.4",
+    "lodash": "~4.17.0",
     "parse-link-header": "^0.4.1",
     "proxyquire": "^1.7.1",
     "step": "0.0.6",
