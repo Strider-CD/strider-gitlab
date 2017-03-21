@@ -61,7 +61,6 @@ the before, after or beforeEach/afterEach blocks. For example, comment out all t
 ```
   before('Setup the mock gitlab server', function setupNock() {
     nock.cleanAll();                        //remove all interceptors
-    nock.disableNetConnect();               //prevent all network call from going to the actual server
     require('./mocks/gitlab_add_key.js')(); //pull in the mock code to simulate the server for this block
   });
 

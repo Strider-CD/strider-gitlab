@@ -46,7 +46,6 @@ const correctDeployKey = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDAMoSHhKfeE3/oXa
 describe('gitlab api', function() {
   before('Setup the mock gitlab server', function setupNock() {
     nock.cleanAll();
-    nock.disableNetConnect();
     require('./mocks/gitlab_get.js')();
     require('./mocks/gitlab_add_key.js')();
   });
@@ -196,7 +195,6 @@ describe('gitlab api', function() {
   describe('removeDeployKey - when key is registered with the server', function() {
     before('Setup the mock gitlab server', function setupNock() {
       nock.cleanAll();
-      nock.disableNetConnect();
       require('./mocks/gitlab_delete_project.js')();
     });
 
@@ -262,7 +260,6 @@ describe('gitlab api', function() {
   describe('removeDeployKey - when key is not registered in the gitlab server', function() {
     before('Setup the mock gitlab server', function setupNock() {
       nock.cleanAll();
-      nock.disableNetConnect();
       require('./mocks/gitlab_delete_key_when_absent.js')();
     });
 
@@ -287,13 +284,11 @@ describe('gitlab api', function() {
 
     beforeEach('Setup the mock gitlab server for creating hooks', function setupNock() {
       nock.cleanAll();
-      nock.disableNetConnect();
       require('./mocks/gitlab_create_hooks.js')();
     });
 
     afterEach('Tear down mock Gitlab server', function tearDownNock() {
       nock.cleanAll();
-      nock.enableNetConnect();
     });
 
 
@@ -354,13 +349,11 @@ describe('gitlab api', function() {
   describe('deleteHooks - when hook has been registered', function() {
     before('Setup the mock gitlab server', function setupNock() {
       nock.cleanAll();
-      nock.disableNetConnect();
       require('./mocks/gitlab_delete_hooks_when_present.js')();
     });
 
     after('Tear down mock Gitlab server', function tearDownNock() {
       nock.cleanAll();
-      nock.enableNetConnect();
     });
 
 
@@ -415,13 +408,11 @@ describe('gitlab api', function() {
   describe('deleteHooks - when hook has not been registered', function() {
     before('Setup the mock gitlab server', function setupNock() {
       nock.cleanAll();
-      nock.disableNetConnect();
       require('./mocks/gitlab_delete_hooks_when_absent.js')();
     });
 
     after('Tear down mock Gitlab server', function tearDownNock() {
       nock.cleanAll();
-      nock.enableNetConnect();
     });
 
     it('should callback with err as null and wasDeleted as false', function(done) {

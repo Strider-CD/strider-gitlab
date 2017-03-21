@@ -136,7 +136,6 @@ describe('gitlab webapp', function() {
   describe('getFile', function() {
     before('Setup the mock gitlab server', function setupNock() {
       nock.cleanAll();
-      nock.disableNetConnect();
       require('./mocks/gitlab_webapp_getfile.js')();
     });
 
@@ -227,7 +226,6 @@ describe('gitlab webapp', function() {
 
     before('Setup the mock gitlab server', function setupNock() {
       nock.cleanAll();
-      nock.disableNetConnect();
       require('./mocks/gitlab_webapp_getbranches.js')();
     });
 
@@ -283,7 +281,6 @@ describe('gitlab webapp', function() {
 
     before('Setup the mock gitlab server', function setupNock() {
       nock.cleanAll();
-      nock.disableNetConnect();
       require('./mocks/gitlab_webapp_listrepos.js')();
     });
 
@@ -325,7 +322,6 @@ describe('gitlab webapp', function() {
 
     before('Setup the mock gitlab server', function setupNock() {
       nock.cleanAll();
-      nock.disableNetConnect();
       require('./mocks/gitlab_webapp_setuprepo.js')();
     });
 
@@ -373,7 +369,6 @@ describe('gitlab webapp', function() {
 
     before('Setup the mock gitlab server', function setupNock() {
       nock.cleanAll();
-      nock.disableNetConnect();
       require('./mocks/gitlab_webapp_teardownrepos.js')();
     });
 
