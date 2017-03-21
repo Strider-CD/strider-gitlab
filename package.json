@@ -55,7 +55,7 @@
     "proxyquire": "^1.7.1",
     "step": "1.0.0",
     "strider-git": "^1.0.0",
-    "superagent": "~3.4.0"
+    "superagent": "~3.4.1"
   },
   "bugs": {
     "url": "https://github.com/Strider-CD/strider-gitlab/issues"
