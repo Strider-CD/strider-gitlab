@@ -17,14 +17,7 @@
 const expect = require('expect.js');
 const webapp = require('../lib/webapp');
 const util = require('util');
-const debug = require('debug')('strider-gitlab:test:webapp');
 const nock = require('nock');
-
-//TODO: The following two functions should probably be put in a utilities package
-let inspect = function inspect(string, object) {
-  //util.inspect params - object, showHiddenProperties, levels to recurse, colorize output
-  debug(string, util.inspect(object, false, 10, true));
-};
 
 function deepClone(sourceObject) {
   return JSON.parse(JSON.stringify(sourceObject));
