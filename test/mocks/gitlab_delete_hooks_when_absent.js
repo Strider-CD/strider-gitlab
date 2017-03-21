@@ -12,9 +12,9 @@
  Strider Tester / pubproject1
  Strider Tester / privproject1
  */
-var nock = require('nock');
+const nock = require('nock');
 
-module.exports = function () {
+module.exports = function() {
   //--------------------------------------------------------------------------------------
   //Empty array as list of hooks in response
   nock('http://localhost:80')

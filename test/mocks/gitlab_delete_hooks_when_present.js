@@ -15,8 +15,8 @@
  Strider Tester / privproject1
 
  */
-var nock = require('nock');
-module.exports = function () {
+const nock = require('nock');
+module.exports = function() {
 
   /*--------------------------------------------------------------------------------------
    Simulate responses from gitlab server when deleting multiple hooks associated with a

@@ -38,7 +38,7 @@ module.exports = {
     creator: {
       _id: "55d2ecb5edb0d634165eac37"
     },
-    branch: function (branchname) {
+    branch: function(branchname) {
       //mocked to only return the master branch
       return {
         name: 'master',

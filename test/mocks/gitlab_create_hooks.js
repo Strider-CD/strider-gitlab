@@ -12,9 +12,9 @@
  Strider Tester / pubproject1
  Strider Tester / privproject1
  */
-var nock = require('nock');
+const nock = require('nock');
 
-module.exports = function () {
+module.exports = function() {
 
   //--------------------------------------------------------------------------------------
   //Simulate a 401 reply if api key is not sent

@@ -13,9 +13,9 @@
  Strider Tester / privproject1
 
  */
-var nock = require('nock');
+const nock = require('nock');
 
-module.exports = function () {
+module.exports = function() {
 
   nock('http://localhost:80')
     .get('/api/v3/projects/5/deploy_keys')

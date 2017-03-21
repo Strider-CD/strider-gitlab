@@ -13,9 +13,9 @@
  Strider Tester / privproject1
  */
 
-var nock = require('nock');
+const nock = require('nock');
 
-module.exports = function () {
+module.exports = function() {
   //--------------------------------------------------------------------------------------
   //simulate a Created 201 response when we try to deploy ssh keys for a project
   nock('http://localhost:80')

@@ -12,14 +12,14 @@
  Strider Tester / privproject1
  */
 
-var expect = require('expect.js');
-var webapp = require('../lib/webapp');
-var util = require('util');
-var debug = require('debug')('strider-gitlab:test:webapp');
-var nock = require('nock');
+const expect = require('expect.js');
+const webapp = require('../lib/webapp');
+const util = require('util');
+const debug = require('debug')('strider-gitlab:test:webapp');
+const nock = require('nock');
 
 //TODO: The following two functions should probably be put in a utilities package
-var inspect = function inspect(string, object) {
+let inspect = function inspect(string, object) {
   //util.inspect params - object, showHiddenProperties, levels to recurse, colorize output
   debug(string, util.inspect(object, false, 10, true));
 };
@@ -28,12 +28,12 @@ function deepClone(sourceObject) {
   return JSON.parse(JSON.stringify(sourceObject));
 }
 
-var wrongCredentialsConfig = {
+const wrongCredentialsConfig = {
   api_url: 'http://localhost:80/api/v3',
   api_key: 'badkey'
 };
 
-var providerConfig = {
+const providerConfig = {
   whitelist: [],
   pull_requests: 'none',
   repo: 'http://nodev/stridertester/privproject1',
@@ -49,22 +49,24 @@ var providerConfig = {
   auth: {type: 'ssh'}
 };
 
-var providerConfigForProjectWithMissingStriderJson =
-{ whitelist: [],
-  pull_requests: 'none',
-  repo: 'http://nodev/stridertester/priproject2',
-  owner:
-   { avatar_url: 'http://www.gravatar.com/avatar/3f671ed86ed3d21ed3640c7a016b0997?s=40&d=identicon',
-     state: 'active',
-     id: 3,
-     username: 'stridertester',
-     name: 'Strider Tester' },
-  url: 'git@nodev:stridertester/priproject2.git',
-  scm: 'git',
-  auth: { type: 'ssh' }
-};
+const providerConfigForProjectWithMissingStriderJson =
+  {
+    whitelist: [],
+    pull_requests: 'none',
+    repo: 'http://nodev/stridertester/priproject2',
+    owner: {
+      avatar_url: 'http://www.gravatar.com/avatar/3f671ed86ed3d21ed3640c7a016b0997?s=40&d=identicon',
+      state: 'active',
+      id: 3,
+      username: 'stridertester',
+      name: 'Strider Tester'
+    },
+    url: 'git@nodev:stridertester/priproject2.git',
+    scm: 'git',
+    auth: {type: 'ssh'}
+  };
 
-var repoProject = {
+const repoProject = {
   name: 'stridertester/privproject1',
   display_name: 'stridertester/privproject1',
   display_url: 'http://nodev/stridertester/privproject1',
@@ -119,19 +121,19 @@ var repoProject = {
   ]
 };
 
-var projectWithInvalidRepoID = deepClone(repoProject);
+const projectWithInvalidRepoID = deepClone(repoProject);
 projectWithInvalidRepoID.provider.repo_id = "invalidrepo";
 
-var projectWithInvalidSSHKey = deepClone(repoProject);
+const projectWithInvalidSSHKey = deepClone(repoProject);
 projectWithInvalidSSHKey.branches[0].pubkey = "invalid key";
 
-var projectWithInvalidName = deepClone(repoProject);
+const projectWithInvalidName = deepClone(repoProject);
 projectWithInvalidName.name = "nonexistentproject";
 
-describe('gitlab webapp', function () {
+describe('gitlab webapp', function() {
   //--------------------------------------------------------------------------------------
   //Test getting a json file
-  describe('getFile', function () {
+  describe('getFile', function() {
     before('Setup the mock gitlab server', function setupNock() {
       nock.cleanAll();
       nock.disableNetConnect();
@@ -142,36 +144,36 @@ describe('gitlab webapp', function () {
       nock.cleanAll();
     });
 
-    var filename = "strider.json";
+    const filename = "strider.json";
 
-    var ref = {
+    const ref = {
       branch: 'master',
     };
 
     //getFile only uses account.config
-    var account = {
-        api_key: 'zRtVsmeznn7ySatTrnrp',
-        api_url: 'http://localhost:80/api/v3'
+    const account = {
+      api_key: 'zRtVsmeznn7ySatTrnrp',
+      api_url: 'http://localhost:80/api/v3'
     };
 
 
     //getFile only uses project.provider.repo_id
-    var project = {
+    const project = {
       provider: {
         repo_id: '5'
       }
     };
 
     //project with strider.json missing
-    var projectWithMissingStriderJson ={
+    const projectWithMissingStriderJson = {
       provider: {
         repo_id: '8'
       }
     };
 
 
-    it('should get a json file correctly', function (done) {
-      webapp.getFile(filename, ref, account, providerConfig, project, function (err, text) {
+    it('should get a json file correctly', function(done) {
+      webapp.getFile(filename, ref, account, providerConfig, project, function(err, text) {
         expect(text).to.be.a('string');
         done();
       });
@@ -179,7 +181,7 @@ describe('gitlab webapp', function () {
 
     //created a project priproject2 of type node.js, but not having a strider.json for this test
     it('should not crash, but return an error if the file could not be found', function(done) {
-      webapp.getFile(filename, ref, account, providerConfigForProjectWithMissingStriderJson, projectWithMissingStriderJson, function (err, text) {
+      webapp.getFile(filename, ref, account, providerConfigForProjectWithMissingStriderJson, projectWithMissingStriderJson, function(err, text) {
         expect(err).to.be.ok();
         expect(text).to.not.be.ok();
         done();
@@ -189,7 +191,7 @@ describe('gitlab webapp', function () {
 
   //--------------------------------------------------------------------------------------
   //Test getting branches from a repository
-  describe('getBranches', function () {
+  describe('getBranches', function() {
     //takes parameters - account, config, project
 
     /*
@@ -199,25 +201,25 @@ describe('gitlab webapp', function () {
      two properties - api_url and api_key. Also note that in the webapp file, config
      is used to refer to an object of type project.provider.config
      */
-    var account = {
+    const account = {
       api_url: 'http://localhost:80/api/v3',
       api_key: 'zRtVsmeznn7ySatTrnrp'
     };
 
 
-    var invalidAccount = {
+    const invalidAccount = {
       api_url: 'http://localhost:80/api/v3',
       api_key: 'badkey'
     };
 
     //getBranches only uses project.provider.repo_id
-    var project = {
+    const project = {
       provider: {
         repo_id: '5',
       }
     };
 
-    var invalidProject = {
+    const invalidProject = {
       provider: {
         repo_id: 'invalidrepo',
       }
@@ -233,8 +235,8 @@ describe('gitlab webapp', function () {
       nock.cleanAll();
     });
 
-    it('should get a correct list of branches in the project', function (done) {
-      webapp.getBranches(account, providerConfig, project, function (err, branches) {
+    it('should get a correct list of branches in the project', function(done) {
+      webapp.getBranches(account, providerConfig, project, function(err, branches) {
         //debug("Branches we get are: " + Object.prototype.toString.call(branches) + "Inspected: " + util.inspect(branches, false, null, true));
         expect(branches).to.be.an('array');
         expect(branches).to.eql(['firstbranch', 'master']);
@@ -242,8 +244,8 @@ describe('gitlab webapp', function () {
       });
     });
 
-    it('should complain suitably if account data is empty', function (done) {
-      webapp.getBranches({}, providerConfig, project, function (err, branches) {
+    it('should complain suitably if account data is empty', function(done) {
+      webapp.getBranches({}, providerConfig, project, function(err, branches) {
         //debug("Branches we get are: " + Object.prototype.toString.call(branches) + "Inspected: " + util.inspect(branches, false, null, true));
         //debug("We get ERR as: " + util.inspect(err, false, null, true));
         expect(err).to.be.ok();
@@ -251,16 +253,16 @@ describe('gitlab webapp', function () {
       });
     });
 
-    it('should complain suitably if account data is invalid', function (done) {
-      webapp.getBranches(invalidAccount, providerConfig, project, function (err, branches) {
+    it('should complain suitably if account data is invalid', function(done) {
+      webapp.getBranches(invalidAccount, providerConfig, project, function(err, branches) {
         //debug("We get ERR as: " + err);
         expect(err).to.be.ok();
         done();
       });
     });
 
-    it('should complain suitably if project.provider.repo_id is invalid', function (done) {
-      webapp.getBranches(account, providerConfig, invalidProject, function (err, branches) {
+    it('should complain suitably if project.provider.repo_id is invalid', function(done) {
+      webapp.getBranches(account, providerConfig, invalidProject, function(err, branches) {
         //debug("We get ERR as: " + util.inspect(err, false, null, true));
         expect(err).to.be.ok();
         done();
@@ -269,11 +271,11 @@ describe('gitlab webapp', function () {
   });
 
   //--------------------------------------------------------------------------------------
-  describe('listRepos', function () {
+  describe('listRepos', function() {
     //takes parameters - config, callback
 
     //NOTE: what listRepos expects as config, is called account elsewhere in webapp.js
-    var config = {
+    const config = {
       api_url: 'http://localhost:80/api/v3',
       api_key: 'zRtVsmeznn7ySatTrnrp'
     };
@@ -289,8 +291,8 @@ describe('gitlab webapp', function () {
       nock.cleanAll();
     });
 
-    it('should get a list of repositories accessible to the user correctly', function (done) {
-      webapp.listRepos(config, function (err, repos) {
+    it('should get a list of repositories accessible to the user correctly', function(done) {
+      webapp.listRepos(config, function(err, repos) {
         expect(err).to.not.be.ok();
         expect(repos).to.be.an('array');
         expect(repos.length).to.eql(3);
@@ -298,15 +300,15 @@ describe('gitlab webapp', function () {
       });
     });
 
-    it('should complain if an invalid config is passed - invalid api_url', function (done) {
-      webapp.listRepos({api_url: 'invalidurl', api_key: 'zRtVsmeznn7ySatTrnrp'}, function (err, repos) {
+    it('should complain if an invalid config is passed - invalid api_url', function(done) {
+      webapp.listRepos({api_url: 'invalidurl', api_key: 'zRtVsmeznn7ySatTrnrp'}, function(err, repos) {
         expect(err).to.be.ok();
         done();
       });
     });
 
-    it('should complain if invalid credentials are passed - wrong api_key', function (done) {
-      webapp.listRepos(wrongCredentialsConfig, function (err, repos) {
+    it('should complain if invalid credentials are passed - wrong api_key', function(done) {
+      webapp.listRepos(wrongCredentialsConfig, function(err, repos) {
         expect(err).to.be.ok();
         done();
       });
@@ -314,9 +316,9 @@ describe('gitlab webapp', function () {
   });
 
   //--------------------------------------------------------------------------------------
-  describe('setupRepo', function () {
+  describe('setupRepo', function() {
     //takes parameters - account, project, config, callback
-    var account = {
+    const account = {
       api_url: 'http://localhost:80/api/v3',
       api_key: 'zRtVsmeznn7ySatTrnrp'
     };
@@ -331,30 +333,30 @@ describe('gitlab webapp', function () {
       nock.cleanAll();
     });
 
-    it('should callback with the same config object that we passed in as the second parameter if repo was set up successfully', function (done) {
-      webapp.setupRepo(account, providerConfig, repoProject, function (err, receivedConf) {
+    it('should callback with the same config object that we passed in as the second parameter if repo was set up successfully', function(done) {
+      webapp.setupRepo(account, providerConfig, repoProject, function(err, receivedConf) {
         expect(err).to.not.be.ok();
         expect(receivedConf).to.eql(providerConfig);
         done();
       });
     });
 
-    it('should callback with an error if invalid credentials are supplied', function (done) {
-      webapp.setupRepo(wrongCredentialsConfig, providerConfig, repoProject, function (err, receivedConf) {
+    it('should callback with an error if invalid credentials are supplied', function(done) {
+      webapp.setupRepo(wrongCredentialsConfig, providerConfig, repoProject, function(err, receivedConf) {
         expect(err).to.be.ok();
         done();
       });
     });
 
-    it('should callback with an error if project.provider.repo_id is invalid', function (done) {
-      webapp.setupRepo(account, providerConfig, projectWithInvalidRepoID, function (err, receivedConf) {
+    it('should callback with an error if project.provider.repo_id is invalid', function(done) {
+      webapp.setupRepo(account, providerConfig, projectWithInvalidRepoID, function(err, receivedConf) {
         expect(err).to.be.ok();
         done();
       });
     });
 
-    it('should callback with an error if project.branches[0].pubkey is not a valid ssh public key', function (done) {
-      webapp.setupRepo(account, providerConfig, projectWithInvalidSSHKey, function (err, receivedConf) {
+    it('should callback with an error if project.branches[0].pubkey is not a valid ssh public key', function(done) {
+      webapp.setupRepo(account, providerConfig, projectWithInvalidSSHKey, function(err, receivedConf) {
         expect(err).to.be.ok();
         done();
       });
@@ -362,9 +364,9 @@ describe('gitlab webapp', function () {
   });
 
   //--------------------------------------------------------------------------------------
-  describe('tearDownRepo', function () {
+  describe('tearDownRepo', function() {
     //takes parameters - account, project, config, callback
-    var account = {
+    const account = {
       api_url: 'http://localhost:80/api/v3',
       api_key: 'zRtVsmeznn7ySatTrnrp'
     };
@@ -379,29 +381,29 @@ describe('gitlab webapp', function () {
       nock.cleanAll();
     });
 
-    it('should callback on success with no parameters if the repo was destroyed successfully', function (done) {
-      webapp.teardownRepo(account, providerConfig, repoProject, function (err) {
+    it('should callback on success with no parameters if the repo was destroyed successfully', function(done) {
+      webapp.teardownRepo(account, providerConfig, repoProject, function(err) {
         expect(err).to.not.be.ok();
         done();
       });
     });
 
-    it('should callback with an error if invalid credentials are supplied', function (done) {
-      webapp.teardownRepo(wrongCredentialsConfig, providerConfig, repoProject, function (err) {
+    it('should callback with an error if invalid credentials are supplied', function(done) {
+      webapp.teardownRepo(wrongCredentialsConfig, providerConfig, repoProject, function(err) {
         expect(err).to.be.ok();
         done();
       });
     });
 
-    it('should callback with an error if project.provider.repo_id is invalid', function (done) {
-      webapp.teardownRepo(account, providerConfig, projectWithInvalidRepoID, function (err) {
+    it('should callback with an error if project.provider.repo_id is invalid', function(done) {
+      webapp.teardownRepo(account, providerConfig, projectWithInvalidRepoID, function(err) {
         expect(err).to.be.ok();
         done();
       });
     });
 
-    it.skip('should callback with an error if an invalid project name is given', function (done) {
-      webapp.teardownRepo(account, providerConfig, projectWithInvalidName, function (err) {
+    it.skip('should callback with an error if an invalid project name is given', function(done) {
+      webapp.teardownRepo(account, providerConfig, projectWithInvalidName, function(err) {
         //TODO: what happens here is that the title does not match that of the key and
         //the key is not deleted. In that case, we are silently ignoring the was_deleted flag
         //and directly calling done with a null error

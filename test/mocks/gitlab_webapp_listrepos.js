@@ -8,15 +8,15 @@
  has been registered with api token - zRtVsmeznn7ySatTrnrp
  stridertester is an "owner" of a group named "testunion"
  and has admin access to three projects -
-   testunion / unionproject1
-   Strider Tester / pubproject1
-   Strider Tester / privproject1
+ testunion / unionproject1
+ Strider Tester / pubproject1
+ Strider Tester / privproject1
 
  */
 
-var nock = require('nock');
+const nock = require('nock');
 
-module.exports = function () {
+module.exports = function() {
 
   //--------------------------------------------------------------------------------------
   //Simulate a good response that sends the three correct repos

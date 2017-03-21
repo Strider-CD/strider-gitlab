@@ -13,9 +13,9 @@
  Strider Tester / privproject1
  */
 
-var nock = require('nock');
+const nock = require('nock');
 
-module.exports = function () {
+module.exports = function() {
 
   nock('http://localhost:80')
     .get('/api/v3/projects/5/repository/blobs/master')
@@ -39,15 +39,17 @@ module.exports = function () {
   //For this purpose we have added another project named priproject2 with id 8
   nock('http://localhost:80')
     .get('/api/v3/projects/8/repository/blobs/master')
-    .query({"private_token":"zRtVsmeznn7ySatTrnrp","per_page":"100","filepath":"strider.json"})
-    .reply(404, ["1f8b0800000000000003ab56ca4d2d2e4e4c4f55b2523231305170cbcc4955f0cb2f5170cb2fcd4b51aa0500db72e71020000000"], { server: 'nginx',
-    date: 'Mon, 24 Aug 2015 06:28:17 GMT',
-    'content-type': 'application/json',
-    'transfer-encoding': 'chunked',
-    connection: 'close',
-    status: '404 Not Found',
-    'cache-control': 'no-cache',
-    'x-request-id': '9e221d4c-9109-4291-929b-2e7cb1e4f057',
-    'x-runtime': '0.022119',
-    'content-encoding': 'gzip' });
+    .query({"private_token": "zRtVsmeznn7ySatTrnrp", "per_page": "100", "filepath": "strider.json"})
+    .reply(404, ["1f8b0800000000000003ab56ca4d2d2e4e4c4f55b2523231305170cbcc4955f0cb2f5170cb2fcd4b51aa0500db72e71020000000"], {
+      server: 'nginx',
+      date: 'Mon, 24 Aug 2015 06:28:17 GMT',
+      'content-type': 'application/json',
+      'transfer-encoding': 'chunked',
+      connection: 'close',
+      status: '404 Not Found',
+      'cache-control': 'no-cache',
+      'x-request-id': '9e221d4c-9109-4291-929b-2e7cb1e4f057',
+      'x-runtime': '0.022119',
+      'content-encoding': 'gzip'
+    });
 };
