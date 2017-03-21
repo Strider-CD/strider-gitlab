@@ -1,3 +1,5 @@
+'use strict';
+
 /*
  Simulation of responses from server when we
  request the addition of a deploy key.

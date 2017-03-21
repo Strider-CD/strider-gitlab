@@ -1,3 +1,5 @@
+'use strict';
+
 /*
  Here we simulate the response of the server when asked
  to get the strider.json file from the privproject1 repo

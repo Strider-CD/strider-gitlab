@@ -1,3 +1,5 @@
+'use strict';
+
 /*
  Simulation of responses from server when we
  ask for deleting hooks when no hooks are present

@@ -1,3 +1,5 @@
+'use strict';
+
 /*
 
  Used to test the gitlab API wrapper

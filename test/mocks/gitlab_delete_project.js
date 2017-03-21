@@ -1,3 +1,5 @@
+'use strict';
+
 /*
  Simulate responses from server when we try to
  delete a project.

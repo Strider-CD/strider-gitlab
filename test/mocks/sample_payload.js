@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = {
   object_kind: 'push',
   before: '9be0948373aedbbed7ac6ce1da708061fac072d7',

@@ -1,3 +1,5 @@
+'use strict';
+
 //This is a mock for a request passed in to the receiveWebhooks function
 //It contains the payload received from the gitlab server in
 //body and project information from strider

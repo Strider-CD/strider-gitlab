@@ -1,3 +1,5 @@
+'use strict';
+
 /*
  Simulation of responses from a server when we
  request the creation of hooks.

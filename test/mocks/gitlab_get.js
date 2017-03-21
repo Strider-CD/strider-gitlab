@@ -1,3 +1,5 @@
+'use strict';
+
 /*
  This file sets up mock responses as received from gitlab for each request fired
  during get operations.

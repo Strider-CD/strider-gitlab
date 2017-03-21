@@ -1,3 +1,5 @@
+'use strict';
+
 /*
 
  These scenarios are mock responses from the server

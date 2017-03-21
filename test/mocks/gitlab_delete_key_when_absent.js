@@ -1,3 +1,5 @@
+'use strict';
+
 /*
  Here we simulate the response of the server when there
  no deploy keys registered in the project.

@@ -1,3 +1,5 @@
+'use strict';
+
 /*
  Here we simulate the response of the server when asked
  to get a list of branches from the privproject1 repo

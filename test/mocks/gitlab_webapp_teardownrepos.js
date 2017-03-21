@@ -1,3 +1,5 @@
+'use strict';
+
 /*
  Here we simulate the response of the server when asked
  to tear down the repo for privproject1
