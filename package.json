@@ -41,7 +41,7 @@
     "inline_icon": "git-square"
   },
   "devDependencies": {
-    "eslint": "^3.1.1",
+    "eslint": "^3.18.0",
     "expect.js": "~0.3.1",
     "mocha": "~3.2.0",
     "nock": "^9.0.0"
@@ -49,11 +49,10 @@
   "dependencies": {
     "async": "~2.1.0",
     "debug": "~2.6.0",
-    "gravatar": "^1.0.6",
+    "gravatar": "^1.6.0",
     "lodash": "~4.17.0",
     "parse-link-header": "^0.4.1",
-    "proxyquire": "^1.7.1",
-    "step": "1.0.0",
+    "proxyquire": "^1.7.11",
     "strider-git": "^1.0.0",
     "superagent": "~3.5.1"
   },
