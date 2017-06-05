@@ -51,7 +51,7 @@
     "debug": "~2.6.0",
     "gravatar": "^1.6.0",
     "lodash": "~4.17.0",
-    "parse-link-header": "^0.4.1",
+    "parse-link-header": "^1.0.1",
     "proxyquire": "^1.7.11",
     "strider-git": "^1.0.0",
     "superagent": "~3.5.1"
