@@ -41,7 +41,7 @@
     "inline_icon": "git-square"
   },
   "devDependencies": {
-    "eslint": "4.13.0",
+    "eslint": "4.19.1",
     "expect.js": "~0.3.1",
     "mocha": "~3.5.3",
     "nock": "^9.0.0"
