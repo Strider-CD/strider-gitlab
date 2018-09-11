@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "async": "~2.1.0",
-    "debug": "~2.6.0",
+    "debug": "~3.2.2",
     "gravatar": "^1.6.0",
     "lodash": "~4.17.0",
     "parse-link-header": "^0.4.1",
