@@ -91,4 +91,36 @@ describe('receiving webhooks from the gitlab server', function() {
     });
   });
 
+
+  //--------------------------------------------------------------------------------------
+  describe('pushJob', function() {
+    //pushJob takes one parameter - a payload object
+
+    it('should be able to parse the payload and return an object with branch, trigger, deploy and ref by gitlab v7', function() {
+      const samplePayload = require('./mocks/sample_payload_tag_push_with_v7.x.js');
+      const config = webhooks.pushJob(samplePayload);
+      expect(config).to.eql({
+        branch: 'tag-1.1.2',
+        trigger: {
+         type: 'tag push',
+         author: {
+          name: 'Strider Tester',
+          username: undefined,
+          email: undefined,
+          image: 'https://s.gravatar.com/avatar/d415f0e30c471dfdd9bc4f827329ef48'
+        },
+        url: 'http://nodev/stridertester/privproject1/commit/352e6fe2ea42d394a21dc7995df2116e86bb0684',
+        message: 'tag push',
+        timestamp: config.trigger.timestamp,
+        source: { type: 'plugin', plugin: 'gitlab' }
+      },
+      deploy: true,
+      ref: {
+         branch: 'tag-1.1.2',
+         id: '352e6fe2ea42d394a21dc7995df2116e86bb0684'
+        }
+      });
+    });
+  });
+
 });
