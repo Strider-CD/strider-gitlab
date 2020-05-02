@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.1](https://github.com/Strider-CD/strider-gitlab/compare/v1.3.0...v1.3.1) (2020-05-02)
+
+
+### Bug Fixes
+
+* actually fix the page issue ([a83536c](https://github.com/Strider-CD/strider-gitlab/commit/a83536c6c60155880658cf20c40254d36cff63fd))
+
 ## [1.3.0](https://github.com/Strider-CD/strider-gitlab/compare/v1.2.2...v1.3.0) (2020-05-02)
 
 
