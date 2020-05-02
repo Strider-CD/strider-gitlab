@@ -9,6 +9,7 @@ This plugin provides seamless integration between [Strider](https://github.com/S
 [![Build Status](https://travis-ci.org/Strider-CD/strider-gitlab.svg)](https://travis-ci.org/Strider-CD/strider-gitlab)
 
 ## Set Up
+
 1. Install the plugin (can be done either from the Admin/Plugins section of the GUI or by running `bin/strider install gitlab`)
 2. Click on your e-mail address in the top right corner of the GUI, then click "Account"
 3. Click "GitLab" at the left of your screen
@@ -16,13 +17,15 @@ This plugin provides seamless integration between [Strider](https://github.com/S
 5. Navigate to "Projects" in the Strider GUI. You should now see a tab with the name of your GitLab account
 
 ## Contributors
-  * Martin Ericson (http://www.devbox.com)
-  * [nodefourtytwo/strider-gitlab](https://github.com/nodefourtytwo/strider-gitlab)
-  * [jonlil](https://github.com/jonlil)
-  * [edy](https://github.com/edy)
-  * [*others*](https://github.com/Strider-CD/strider-gitlab/graphs/contributors)
+
+- Martin Ericson (http://www.devbox.com)
+- [nodefourtytwo/strider-gitlab](https://github.com/nodefourtytwo/strider-gitlab)
+- [jonlil](https://github.com/jonlil)
+- [edy](https://github.com/edy)
+- [_others_](https://github.com/Strider-CD/strider-gitlab/graphs/contributors)
 
 ## License
+
 The MIT License (MIT)
 
 Copyright (c) 2014 Martin Ericson
