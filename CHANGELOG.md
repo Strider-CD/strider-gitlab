@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/Strider-CD/strider-gitlab/compare/v1.3.1...v1.4.0) (2020-05-02)
+
+
+### Features
+
+* add option to limit gitlab results to projects you are a member of ([73b11df](https://github.com/Strider-CD/strider-gitlab/commit/73b11df43ea8a4d8491d02d9829f7bde6ca3a7ee))
+
 ### [1.3.1](https://github.com/Strider-CD/strider-gitlab/compare/v1.3.0...v1.3.1) (2020-05-02)
 
 
