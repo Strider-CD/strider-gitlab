@@ -1,11 +1,12 @@
 {
   "name": "strider-gitlab",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "A gitlab provider for strider",
   "scripts": {
     "test": "npm run lint && npm run tests",
     "lint": "eslint lib",
-    "tests": "mocha -R spec test/"
+    "tests": "mocha -R spec test/",
+    "release": "standard-version"
   },
   "engines": {
     "node": ">=4.2"
@@ -44,7 +45,8 @@
     "eslint": "4.13.0",
     "expect.js": "~0.3.1",
     "mocha": "~3.5.3",
-    "nock": "^10.0.0"
+    "nock": "^10.0.0",
+    "standard-version": "^7.1.0"
   },
   "dependencies": {
     "async": "~2.6.0",
