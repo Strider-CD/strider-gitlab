@@ -2,7 +2,7 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/Strider-CD/strider-gitlab.svg)](https://greenkeeper.io/)
 
-> Note: This currently only works with Gitlab API v3
+> Note: v2 works with Gitlab API v4 (current version) use v1 for Gitlab API v3
 
 This plugin provides seamless integration between [Strider](https://github.com/Strider-CD/strider) and [GitLab](https://github.com/gitlabhq/gitlabhq). It enables you to add GitLab repositories to Strider and it hooks up necessary webhooks in order to automatically test on commits.
 
